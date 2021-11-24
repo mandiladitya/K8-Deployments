@@ -10,3 +10,6 @@
 - kubectl apply -f ingress-file.yaml -n ingress-poc
 - kubectl get all -n ingress-poc
 ```
+##### Reference
+
+- Microsoft Azure https://docs.microsoft.com/en-us/azure/aks/ingress-basic
