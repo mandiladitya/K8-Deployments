@@ -50,9 +50,10 @@ spec:
               number: 80
         pathType: Exact
 ```
-- ##### kubectl apply -f AGIC-Deployment.yaml
-- ##### kubectl get all
-- ##### kubectl get ingress
+##### kubectl apply -f AGIC-Deployment.yaml
+##### kubectl get all
+##### kubectl get ingress
+--------------------------
 
 - https://raw.githubusercontent.com/Azure/application-gateway-kubernetes-ingress/master/docs/examples/aspnetapp.yaml
 - https://docs.microsoft.com/en-us/azure/application-gateway/ingress-controller-troubleshoot
