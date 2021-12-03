@@ -1,6 +1,6 @@
-##### In you AKS Cluster Networking Tab > Enable Application Gatway
-#####  It'll take approx 15 mins. to create
-###### Create AGIC-Deployment.yaml
+- ##### In you AKS Cluster Networking Tab > Enable Application Gatway
+- #####  It'll take approx 15 mins. to create
+- ###### Create AGIC-Deployment.yaml
 ```
 apiVersion: v1
 kind: Pod
@@ -50,6 +50,6 @@ spec:
               number: 80
         pathType: Exact
 ```
-##### kubectl apply -f AGIC-Deployment.yaml
-##### kubectl get all
-##### kubectl get ingress
+- ##### kubectl apply -f AGIC-Deployment.yaml
+- ##### kubectl get all
+- ##### kubectl get ingress
