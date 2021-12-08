@@ -102,6 +102,7 @@ spec:
 - If the primary goes down, any of the secondary replica will become primary and the StatefulSet controller will create a new replica in account of the one that went down, which will now become a secondary replica.
 
 <img src="https://miro.medium.com/max/875/1*dh5O8yRAbdXHjmVnu9IfzA.png" style="width:50%"></img>
+In case if postgres-0 went down, now postgres-1 became the primary replica
 
 -----------------------------------------------------------
 
