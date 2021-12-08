@@ -9,4 +9,42 @@ it will create a ReplicaSet with name `counter-<replica-set-id>`, which will fur
 - Deployments are usually used for stateless applications.
 - you can save the state of deployment by attaching a Persistent Volume to it and make it stateful, but all the pods of a deployment will be sharing the same Volume and data across all of them will be same.
  
-<script src="https://gist.github.com/kahootali/1de83f98b8cf0b5caf8c73fe1be0241c.js"></script>
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: counter
+  template:
+    metadata:
+      labels:
+        app: counter
+    spec:
+      containers:
+      - name: counter
+        image: "kahootali/counter:1.1"
+        volumeMounts:
+        - name: counter
+          mountPath: /app/
+      volumes:
+      - name: counter
+        persistentVolumeClaim:
+          claimName: counter
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: counter
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 50Mi
+  storageClassName: efs
+```
+![Deployment Image] (https://miro.medium.com/max/875/1*m1BoqSmhxGeGHmeexJ_mZA.png)
